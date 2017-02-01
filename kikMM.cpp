@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-char tab[] = { '1','2','3','4','5','6','7','8','9' };
+char tab[9];
 char rysujPlansze();
 char wyborZnaku();
 char ktoZaczyna();
@@ -13,10 +13,11 @@ char czyWygrana();
 int main()
 {
 	setlocale(LC_ALL, "polish");
-	int odNowaGra;
+	char odNowaGra = 2;
 	cout << "Witaj w grze kó³ko i krzy¿yk" << endl << endl;
 	do
 	{
+		tab[0]='1', tab[1]='2', tab[2] = '3', tab[3] = '4', tab[4] = '5', tab[5] = '6', tab[6] = '7', tab[7] = '8', tab[8] = '9';
 		char znakGracza = wyborZnaku();
 		char znakKomputera;
 		char wygrana;
@@ -60,10 +61,10 @@ int main()
 		else if (wygrana == znakKomputera)
 			cout << "Przegrana! \n \n";
 
-		cout << "Chcesz zagraæ jeszcze raz? 1/2: \n 1: Tak \n 2: Nie \n ";
+		cout << "Chcesz zagraæ jeszcze raz? 1/2: \n\n 1: Tak \n 2: Nie \n ";
 		cin >> odNowaGra; 
 		system("cls");
-	} while (odNowaGra == 1);
+	} while (odNowaGra == '1');
     return 0;
 }
 //FUNKCJE:
@@ -71,7 +72,7 @@ char wyborZnaku(){
 	char znakGracza;
 	char znak;
 	do{
-		cout << "Wybierz znak gracza 1/2: \n 1: O \n 2: X \n";
+		cout << "Wybierz znak gracza 1/2: \n\n 1: O \n 2: X \n";
 		cin >> znak;
 		if (znak == '1')
 			znakGracza = 'O';
@@ -88,9 +89,9 @@ char ktoZaczyna(){
 	char zaczyna;
 	system("cls");
 	do{
-		cout << "Wybierz kto zaczyna 1/2:  \n 1: Gracz \n 2: Komputer \n";
+		cout << "Wybierz kto zaczyna 1/2:  \n\n 1: Gracz \n 2: Komputer \n";
 		cin >> zaczyna;
-		if (zaczyna != '1' || zaczyna != '2'){
+		if (zaczyna != '1' && zaczyna != '2'){
 			system("cls");
 			cout << "B³êdny wybór. \n";
 		}
