@@ -162,6 +162,9 @@ void ruchKomputera(char znak){
 	else if ((tab[4] == tab[1] || tab[6] == tab[8]) && (tab[7] != 'O' && tab[7] != 'X'))
 		tab[7] = znak;
 
+	else if ((tab[4] == znak && tab[5] == znakG) && (tab[8] != 'O' && tab[8] != 'X') && (tab[2] != znak && tab[6] == znakG))
+		tab[8] = znak;
+
 	else if ((tab[4] == znak && tab[5] == znakG) && (tab[2] != 'O' && tab[2] != 'X') && tab[6] == '7')
 		tab[2] = znak;
 	else if ((tab[4] == znak && tab[7] == znakG) && (tab[8] != 'O' && tab[8] != 'X') && tab[0] == '1')
